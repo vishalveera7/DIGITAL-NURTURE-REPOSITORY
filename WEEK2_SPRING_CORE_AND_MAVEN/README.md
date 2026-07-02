@@ -9,6 +9,7 @@ Skills
 -Hibernate
 
 Technologies Used
+
 -Java
 -Eclipse IDE
 -Maven
