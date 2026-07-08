@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Feedback - Community Event Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 500px; margin: auto; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+        .error { color: red; font-size: 0.85em; }
+        #eventImage { width: 150px; margin-top: 10px; cursor: pointer; transition: width 0.3s; }
+        #charCount { font-size: 0.85em; color: #555; }
+        #confirmMsg { color: green; font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h2>Event Feedback</h2>
+
+    <!-- onblur: validate phone number when field loses focus -->
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" placeholder="10-digit number" onblur="validatePhone()">
+    <span id="phoneError" class="error"></span>
+
+    <!-- onchange: show fee for selected event -->
+    <label for="eventSelect">Select Event</label>
+    <select id="eventSelect" onchange="showFee()">
+        <option value="">-- Choose --</option>
+        <option value="0">Community Cleanup - Free</option>
+        <option value="100">Summer Fair - ₹100</option>
+        <option value="50">Charity Run - ₹50</option>
+    </select>
+    <p id="feeDisplay"></p>
+
+    <!-- onclick: confirm submission -->
+    <button onclick="confirmSubmit()">Submit Feedback</button>
+    <p id="confirmMsg"></p>
+
+    <!-- ondblclick: enlarge image -->
+    <p>Double-click the image to enlarge it:</p>
+    <img id="eventImage" src="https://picsum.photos/seed/feedback/150/100" alt="Event photo" ondblclick="enlargeImage()">
+
+    <!-- keyboard events: count characters typed in textarea -->
+    <label for="feedbackText">Your Feedback</label>
+    <textarea id="feedbackText" rows="4" onkeyup="countChars()"></textarea>
+    <span id="charCount">0 characters</span>
+
+    <script>
+        function validatePhone() {
+            const phone = document.getElementById('phone').value;
+            const errorSpan = document.getElementById('phoneError');
+            const isValid = /^[0-9]{10}$/.test(phone);
+            errorSpan.textContent = isValid ? '' : 'Please enter a valid 10-digit phone number.';
+        }
+
+        function showFee() {
+            const select = document.getElementById('eventSelect');
+            const fee = select.value;
+            const label = select.options[select.selectedIndex].text;
+            document.getElementById('feeDisplay').textContent = fee
+                ? Selected: ${label}
+                : '';
+        }
+
+        function confirmSubmit() {
+            document.getElementById('confirmMsg').textContent =
+                'Thank you! Your feedback has been submitted.';
+        }
+
+        let enlarged = false;
+        function enlargeImage() {
+            const img = document.getElementById('eventImage');
+            enlarged = !enlarged;
+            img.style.width = enlarged ? '350px' : '150px';
+        }
+
+        function countChars() {
+            const text = document.getElementById('feedbackText').value;
+            document.getElementById('charCount').textContent = ${text.length} characters;
+        }
+    </script>
+
+</body>
+</html>
