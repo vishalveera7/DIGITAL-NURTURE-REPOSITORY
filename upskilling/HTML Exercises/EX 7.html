@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Promo Video - Community Event Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+        video { max-width: 500px; width: 100%; border-radius: 8px; }
+        #videoStatus { color: #2c3e50; font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h2>Watch Our Event Promo</h2>
+
+    <!-- oncanplay fires once the video has buffered enough to start playing -->
+    <video controls width="500" oncanplay="showReadyMessage()">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <p id="videoStatus">Loading video...</p>
+
+    <form id="inviteForm">
+        <p>(This form is used to demo the onbeforeunload warning below.)</p>
+    </form>
+
+    <script>
+        function showReadyMessage() {
+            document.getElementById('videoStatus').textContent = 'Video ready to play';
+        }
+
+        // Warn the user if they try to leave before finishing the form on this page.
+        window.onbeforeunload = function () {
+            return 'You have unsaved changes on this page. Are you sure you want to leave?';
+        };
+    </script>
+
+    <!--
+        Note: the sample video is loaded from w3schools.com and needs an internet
+        connection. Replace the <source src="..."> value with a local file path
+        (e.g., "media/promo.mp4") to use your own offline video.
+
+        Note on onbeforeunload: modern browsers show their own generic warning
+        text and ignore the custom message string for security reasons; the
+        important part for this exercise is that the confirmation dialog appears
+        when you try to close or refresh the tab.
+    -->
+
+</body>
+</html>
