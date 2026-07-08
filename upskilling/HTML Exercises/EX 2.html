@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation and Linking - Community Event Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; }
+        nav { background: #2c3e50; padding: 15px; }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        nav a:hover { text-decoration: underline; }
+        section {
+            padding: 60px 20px;
+            min-height: 250px;
+            border-bottom: 1px solid #ccc;
+        }
+        #home { background: #ecf0f1; }
+        #events { background: #dff5e1; }
+        #contact { background: #fdf1dc; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+        <a href="help.html" target="_blank">Help (opens in new tab)</a>
+    </nav>
+
+    <!-- Main -->
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to the Local Community Event Portal. Use the navigation bar above to jump to any section.</p>
+        </section>
+
+        <section id="events">
+            <h2>Events</h2>
+            <p>Browse upcoming community events, register, and check event locations here.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Reach out to the city council office for questions about registration or accessibility.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p style="text-align:center;">&copy; 2026 Local City Council.</p>
+    </footer>
+
+    <!--
+        Notes:
+        - Each <a href="#id"> in the nav jumps to the <section> with the matching id.
+        - The "Help" link opens help.html in a new browser tab because of target="_blank".
+        - A minimal help.html file is included alongside this file so the link works.
+    -->
+
+</body>
+</html>
