@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Message - Community Event Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+
+        /* Styling applied via the id selector */
+        #welcomeBanner {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 1.4em;
+        }
+
+        /* Styling applied via the reusable class selector */
+        .highlight {
+            background-color: yellow;
+            padding: 2px 6px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- id is used because this banner is a single, unique element on the page -->
+    <div id="welcomeBanner">
+        Welcome back, Ashraf!
+        <!-- inline style example for a one-off special element -->
+        <span style="color: red; font-weight: bold;">Special Offer: Free entry to this weekend's event!</span>
+    </div>
+
+    <p>
+        Don't forget to
+        <span class="highlight">register before Friday</span>
+        to reserve your spot. Seats are
+        <span class="highlight">limited</span>
+        this month.
+    </p>
+
+    <!--
+        id vs class:
+        - #welcomeBanner (id) is unique — only one element on the page should use it.
+        - .highlight (class) can be reused on as many elements as needed, as shown above.
+    -->
+
+</body>
+</html>
