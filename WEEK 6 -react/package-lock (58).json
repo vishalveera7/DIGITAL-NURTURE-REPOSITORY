@@ -1,0 +1,26 @@
+.course{
+  width:30%;
+  float:left;
+  padding-left:20px;
+  border-right:3px solid green;
+  min-height:350px;
+}
+
+.book{
+  width:30%;
+  float:left;
+  padding-left:20px;
+  border-right:3px solid green;
+  min-height:350px;
+}
+
+.blog{
+  width:30%;
+  float:left;
+  padding-left:20px;
+}
+
+ul{
+  list-style:none;
+  padding:0;
+}
